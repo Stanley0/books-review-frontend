@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navigation-header',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavigationHeaderComponent implements OnInit {
 
-  constructor() { }
+  public get isInBookModule() {
+    return this.router.url === "/" || this.router.url.includes("/books");
+  }
+
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }

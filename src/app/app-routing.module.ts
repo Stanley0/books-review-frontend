@@ -1,22 +1,21 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './authentication/views/login/login.component';
-import { RegisterComponent } from './authentication/views/register/register.component';
-import { HomeComponent } from './views/home/home.component';
+import { MainRouteGuard } from './route-guards/main-route.guard';
 import { MainComponent } from './views/main/main.component';
 
 const routes: Routes = [
   {
     path: "",
     component: MainComponent,
+    canActivate: [MainRouteGuard],
     children: [
+      {
+        path: "",
+        loadChildren: () => import('./books/books.module').then(m => m.BooksModule)
+      },
       {
         path: "authentication",
         loadChildren: () => import('./authentication/authentication.module').then(m => m.AuthenticationModule)
-      },
-      {
-        path: "books",
-        loadChildren: () => import('./books/books.module').then(m => m.BooksModule)
       },
       {
         path: "admin",

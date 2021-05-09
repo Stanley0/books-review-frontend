@@ -1,7 +1,7 @@
 <nav>
     <img src="https://img.pngio.com/collection-of-free-transparent-logo-book-download-on-ui-ex-png-books-black-and-white-400_400.png"
         style="width: 64px;height:auto;" />
-    <a routerLink="/books" routerLinkActive="active">Home</a>
+    <a routerLink="/" [ngClass]="isInBookModule ? 'active' : ''">Books</a>
     <a routerLink="/authentication/login" routerLinkActive="active">Login</a>
     <a routerLink="/authentication/register" routerLinkActive="active">Register</a>
     <a routerLink="/admin" routerLinkActive="active">Admin</a>
