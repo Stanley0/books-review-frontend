@@ -1,0 +1,15 @@
+<mat-card>
+    <h3>Category</h3>
+    <ul>
+        <li *ngFor="let category of categories">
+            <mat-checkbox [(ngModel)]="category.isSelected" (change)="onCategoryChanged($event)">
+                {{category.category}}</mat-checkbox>
+        </li>
+    </ul>
+
+    <h3 style="margin-top:1rem;">Sort by</h3>
+    <mat-select [(ngModel)]="selectedSort" (selectionChange)="onSortChanged($event)">
+        <mat-option [value]="sortOption" *ngFor="let sortOption of sortOptions">{{sortOption}}
+        </mat-option>
+    </mat-select>
+</mat-card>

@@ -1,0 +1,12 @@
+.item-card {
+  height: 100%;
+  box-sizing: border-box;
+  transition: all .2s;
+}
+
+.item-card:hover {
+  box-shadow: -20px 0 25px -15px rgba(0, 0, 0, 0.727),
+    20px 0 25px -15px rgba(0, 0, 0, 0.727);
+  cursor: pointer;
+  transform: scale(1.01);
+}

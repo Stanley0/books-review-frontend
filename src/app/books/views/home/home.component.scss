@@ -1,0 +1,12 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    grid-template-rows: min-content 1fr;
+    gap: 1rem 1rem;
+    grid-template-areas:
+      "books-filtering books-search"
+      "books-filtering books-list";
+  }
+  .books-filtering { grid-area: books-filtering; }
+  .books-list { grid-area: books-list; }
+  .books-search { grid-area: books-search; }

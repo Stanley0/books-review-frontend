@@ -1,0 +1,12 @@
+<mat-card>
+    <form [formGroup]="loginForm">
+        <mat-form-field class="form-login-input">
+            <input matInput type="text" placeholder="Login" formControlName="login">
+        </mat-form-field>
+
+        <mat-form-field class="form-login-input">
+            <input matInput type="text" placeholder="Password" type="text" formControlName="password">
+        </mat-form-field>
+        <button mat-raised-button style="width:100%;">Login</button>
+    </form>
+</mat-card>
