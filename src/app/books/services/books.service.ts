@@ -39,7 +39,7 @@ export class BooksService {
   }
 
   public getBooks(categories: string[], sortBy: SortValues, searchText?: string) {
-
+    
     let books: Book[];
 
     if (categories.length > 0) {
