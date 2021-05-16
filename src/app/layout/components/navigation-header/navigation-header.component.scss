@@ -1,0 +1,19 @@
+nav {
+  padding: 0.4rem;
+  background-color: #BDA492;
+  font-size: 1.1rem;
+
+}
+nav>a {
+  color: #4C392C;
+  margin: 0 1rem;
+  text-decoration: none;
+}
+nav>a.active {
+  color: white;
+  outline: none;
+ }
+ img {
+  width: 64px;
+  height:auto;
+ }

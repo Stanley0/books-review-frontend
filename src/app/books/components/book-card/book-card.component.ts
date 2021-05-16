@@ -13,7 +13,7 @@ export class BookCardComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.book);
+
   }
 
 }

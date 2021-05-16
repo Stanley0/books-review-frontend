@@ -30,7 +30,6 @@ export class BooksService {
           if (categories.find(allCategory => allCategory === category)) {
             return;
           }
-
           categories.push(category)
         });
       });
@@ -39,7 +38,7 @@ export class BooksService {
   }
 
   public getBooks(categories: string[], sortBy: SortValues, searchText?: string) {
-    
+
     let books: Book[];
 
     if (categories.length > 0) {

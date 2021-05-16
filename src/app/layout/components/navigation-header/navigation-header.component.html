@@ -1,28 +1,10 @@
 <nav>
-    <img src="https://img.pngio.com/collection-of-free-transparent-logo-book-download-on-ui-ex-png-books-black-and-white-400_400.png"
-        style="width: 64px;height:auto;" />
+    <img src="https://img.pngio.com/collection-of-free-transparent-logo-book-download-on-ui-ex-png-books-black-and-white-400_400.png"/>
     <a routerLink="/" [ngClass]="isInBookModule ? 'active' : ''">Books</a>
-    <a routerLink="/authentication/login" routerLinkActive="active">Login</a>
-    <a routerLink="/authentication/register" routerLinkActive="active">Register</a>
+    <a routerLink="/authentication/login" routerLinkActive="active" *ngIf="!userIsAuthenicated">Login</a>
+    <a routerLink="/authentication/register" routerLinkActive="active" *ngIf="!userIsAuthenicated">Register</a>
+    <a routerLink="/" (click)="onLogout()"  *ngIf="userIsAuthenicated">Logout</a>
     <a routerLink="/admin" routerLinkActive="active">Admin</a>
 </nav>
 
-<style>
-    nav {
-        padding: 0.4rem;
-        background-color: #BDA492;
-        font-size: 1.1rem;
-    }
 
-    nav>a {
-        color: #4C392C;
-        margin: 0 1rem;
-        text-decoration: none;
-    }
-
-    nav>a.active {
-        color: white;
-        outline: none;
-
-    }
-</style>
