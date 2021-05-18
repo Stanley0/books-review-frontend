@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
-
-
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-book-add',
@@ -10,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BookAddComponent implements OnInit {
 
+
+  public form: FormGroup;
+
+
   constructor() { }
-
-
 
   public categories = [
     "Biographies",

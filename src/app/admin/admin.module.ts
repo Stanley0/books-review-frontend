@@ -3,18 +3,15 @@ import { CommonModule } from '@angular/common';
 import { AdminRoutingModule } from './admin-routing.module';
 import { BookAddComponent } from './book-add/book-add.component';
 import { AppCommonModule } from '../app-common/app-common.module';
-
-
-
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  declarations: [
-    BookAddComponent
-  ],
+  declarations: [BookAddComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,
-    AppCommonModule
-  ]
+    AppCommonModule,
+    HttpClientModule,
+  ],
 })
-export class AdminModule { }
+export class AdminModule {}
