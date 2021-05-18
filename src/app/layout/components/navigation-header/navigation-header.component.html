@@ -5,6 +5,7 @@
     <a routerLink="/authentication/register" routerLinkActive="active" *ngIf="!userIsAuthenicated">Register</a>
     <a routerLink="/" (click)="onLogout()"  *ngIf="userIsAuthenicated">Logout</a>
     <a routerLink="/admin" routerLinkActive="active">Admin</a>
+    <a routerLink="/admin/bookAdd" routerLinkActive="active">Add Book</a>
 </nav>
 
 

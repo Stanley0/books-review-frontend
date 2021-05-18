@@ -10,6 +10,7 @@ import { BooksSearchComponent } from './components/books-search/books-search.com
 import { AppCommonModule } from '../app-common/app-common.module';
 
 
+
 @NgModule({
   declarations: [
     HomeComponent,
@@ -17,7 +18,7 @@ import { AppCommonModule } from '../app-common/app-common.module';
     BookCardComponent,
     BooksListComponent,
     BooksFilteringComponent,
-    BooksSearchComponent
+    BooksSearchComponent,
   ],
   imports: [
     CommonModule,

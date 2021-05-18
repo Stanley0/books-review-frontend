@@ -1,0 +1,23 @@
+<mat-card>
+  <form >
+    <mat-form-field>
+      <input matInput type="text"  placeholder="Book Title">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="text"  placeholder="Author Name">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="text"  placeholder="Author Surname">
+    </mat-form-field>
+    <mat-form-field>
+      <textarea matInput rows="4"  placeholder="Book Descritpion"></textarea>
+    </mat-form-field>
+    <div class="checkbox" *ngFor="let category of categories">
+      <mat-checkbox color="primary" >{{category}}</mat-checkbox>
+    </div >
+    <div class="button">
+    <button mat-raised-button color="primary" type="submit">Add Book</button>
+    </div>
+  </form>
+</mat-card>
+

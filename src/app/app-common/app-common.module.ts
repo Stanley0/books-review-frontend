@@ -7,6 +7,8 @@ import { MatButtonModule } from '@angular/material/button'
 import { MatCheckboxModule } from '@angular/material/checkbox'
 import { MatSelectModule } from '@angular/material/select'
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 
 
@@ -29,6 +31,9 @@ import { FormsModule } from '@angular/forms';
     MatButtonModule,
     MatCheckboxModule,
     MatSelectModule,
+    MatCheckboxModule,
+    ReactiveFormsModule
+
 
   ]
 })
