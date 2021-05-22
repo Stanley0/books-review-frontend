@@ -8,6 +8,8 @@ import { BooksListComponent } from './components/books-list/books-list.component
 import { BooksFilteringComponent } from './components/books-filtering/books-filtering.component';
 import { BooksSearchComponent } from './components/books-search/books-search.component';
 import { AppCommonModule } from '../app-common/app-common.module';
+import { ReviewCreateComponent } from './components/review-create/review-create.component';
+import { ReviewsListComponent } from './components/reviews-list/reviews-list.component';
 
 
 
@@ -19,6 +21,8 @@ import { AppCommonModule } from '../app-common/app-common.module';
     BooksListComponent,
     BooksFilteringComponent,
     BooksSearchComponent,
+    ReviewCreateComponent,
+    ReviewsListComponent,
   ],
   imports: [
     CommonModule,

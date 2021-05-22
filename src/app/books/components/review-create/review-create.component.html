@@ -1,0 +1,16 @@
+<div class="commentForm">
+  <mat-card>
+    <form [formGroup]="form" (submit)="onSaveReview()">
+      <mat-form-field>
+        <textarea formControlName="content" matInput rows="6" placeholder="Share your opinion of this book"></textarea>
+      </mat-form-field>
+      <h3>Rate the book from 1 to 10</h3>
+      <mat-form-field class="rating">
+        <input formControlName="rate" matInput type="number" min="1" max="10">
+      </mat-form-field>
+      <div class="btn">
+        <button mat-raised-button color="prime" type="submit">Add review</button>
+      </div>
+    </form>
+  </mat-card>
+  </div>

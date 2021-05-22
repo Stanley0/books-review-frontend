@@ -83,6 +83,7 @@ export class BookAddComponent implements OnInit {
       image: this.form.value.image,
       author: this.form.value.author,
       category: this.form.value.categories,
+      rate: this.form.value.null
     });
     this.form.reset();
   }

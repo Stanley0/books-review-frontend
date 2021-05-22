@@ -1,10 +1,11 @@
 export interface Book {
-  id: string;
+  _id: string;
   title: string;
   description: string;
-  image: File;
+  image: BookImage;
   author: string;
   category: string[];
+  rate: number;
 }
 
 export interface FormBook {
@@ -13,4 +14,10 @@ export interface FormBook {
   image: File;
   author: string;
   category: string[];
+  rate: number;
+}
+
+interface BookImage {
+  mimetype: string;
+  buffer: string;
 }

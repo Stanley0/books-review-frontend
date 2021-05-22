@@ -10,6 +10,7 @@ import { HomeComponent } from './views/home/home.component';
 import { AppCommonModule } from './app-common/app-common.module';
 import { AuthInterceptor } from './authentication/services/auth-interceptor';
 
+
 @NgModule({
   declarations: [
     AppComponent,

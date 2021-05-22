@@ -1,8 +1,8 @@
-<mat-card class="item-card">
-    <div class="text-center">
-        <img [src]="book.image" />
+<mat-card [routerLink]="['/bookdetails/', book._id  ]" class="item-card">
+    <div class="text-center" *ngIf="book.image">
+        <img [src]="'data:' + book.image.mimetype + ';base64,' + book.image.buffer" />
     </div>
-    <h2>{{book.name}}</h2>
+    <h2>{{book.title}}</h2>
     <h3>{{book.author}}</h3>
     <p class="category">
         {{book.category}}
@@ -10,7 +10,14 @@
     <p>
         {{book.description}}
     </p>
-    <p>
-        {{book.rate}} / 10
-    </p>
+    <div>
+     <div *ngIf="!book.rate">
+       <p>Book not rated yet</p>
+     </div>
+     <div *ngIf="book.rate">
+       <p>
+          {{book.rate}} / 10
+        </p>
+     </div>
+  </div>
 </mat-card>

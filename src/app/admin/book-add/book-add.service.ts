@@ -1,7 +1,6 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { AppHttpClient } from 'src/app/app-common/app-http-client.service';
-import { Book, FormBook } from './book.model';
+import { FormBook } from './book.model';
 
 @Injectable({
   providedIn: 'root',
@@ -9,7 +8,6 @@ import { Book, FormBook } from './book.model';
 export class BookAddService {
 
 
-  private books: Book[] = [];
 
 
 

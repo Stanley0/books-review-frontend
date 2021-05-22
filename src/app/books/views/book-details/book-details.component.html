@@ -1,1 +1,25 @@
-<p>book-details works!</p>
+<div *ngIf="book">
+  <div class="text-center">
+      <img [src]="'data:' + book.image.mimetype + ';base64,' + book.image.buffer" />
+  </div>
+  <h2>{{book.title}}</h2>
+  <h3>{{book.author}}</h3>
+  <p class="category">
+      {{book.category}}
+  </p>
+  <p>
+      {{book.description}}
+  </p>
+  <div>
+   <div *ngIf="!book.rate">
+     <p>Book not rated yet</p>
+   </div>
+   <div *ngIf="book.rate">
+     <p>
+        {{book.rate}} / 10
+      </p>
+   </div>
+</div>
+</div>
+<app-review-create></app-review-create>
+

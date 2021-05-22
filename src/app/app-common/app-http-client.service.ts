@@ -10,8 +10,8 @@ export class AppHttpClient {
 
   constructor(private httpClient: HttpClient) {}
 
-  public get(url: string) {
-    return this.httpClient.get(`${this.serverUrl}` + url);
+  public get<T>(url: string, options?: Parameters<HttpClient["get"]>[1]) {
+    return this.httpClient.get<T>(`${this.serverUrl}` + url, options);
   }
 
   public post(url: string, body: any) {

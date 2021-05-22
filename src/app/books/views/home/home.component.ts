@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { of } from 'rxjs';
-import { Book, BooksService, SortValues } from '../../services/books.service';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { BooksService, SortValues } from '../../services/books.service';
+import { Book } from '../../../admin/book-add/book.model'
 
 
 
@@ -14,12 +15,20 @@ export class HomeComponent implements OnInit {
   private sortByValue: SortValues = "Featured";
   private activeCategories: string[] = [];
 
-  public books!: Book[];
+  public books: Book[] = [];
+  private booksSub?: Subscription;
 
   constructor(private booksService: BooksService) { }
 
   public ngOnInit(): void {
-    this.books = this.booksService.getBooks(this.activeCategories, this.sortByValue, "");
+    this.booksSub = this.booksService.getBooksUpdateListener()
+      .subscribe((books) => {
+        this.books = books
+        console.log(books);
+      });
+    this.booksService.getBooks(this.activeCategories, this.sortByValue, "");
+
+
   }
 
   public onCategoryChanged(categoriesSelected: string[]) {
@@ -33,6 +42,8 @@ export class HomeComponent implements OnInit {
   }
 
   private filterBooks() {
-    this.books = this.booksService.getBooks(this.activeCategories, this.sortByValue, "");
+    this.booksService.getBooks(this.activeCategories, this.sortByValue, "");
   }
+
+
 }
