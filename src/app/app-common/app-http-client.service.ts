@@ -14,7 +14,7 @@ export class AppHttpClient {
     return this.httpClient.get<T>(`${this.serverUrl}` + url, options);
   }
 
-  public post(url: string, body: any) {
-    return this.httpClient.post(`${this.serverUrl}` + url, body);
+  public post<T>(url: string, body: any) {
+    return this.httpClient.post<T>(`${this.serverUrl}` + url, body);
   }
 }

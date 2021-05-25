@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { AuthData } from './auth-data.model';
-import { HttpClient } from "@angular/common/http";
+import { AuthLoginData, AuthRegisterData } from './auth-data.model';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
+import { AppHttpClient } from 'src/app/app-common/app-http-client.service';
 
 
 @Injectable({
@@ -15,7 +15,7 @@ export class AuthService {
   private token: any;  //to be becked why?!
   private authStatusListener = new Subject<boolean>();
 
-  constructor(private http: HttpClient, private router: Router) { }
+  constructor(private httpClient: AppHttpClient, private router: Router) { }
 
 
   getToken() {
@@ -31,8 +31,8 @@ export class AuthService {
   }
 
   createUser(nickname: string, email: string, password: string) {
-    const authData: AuthData = {nickname: nickname, email: email, password: password};
-    this.http.post("http://localhost:3000/api/user/register", authData)
+    const authData: AuthRegisterData = {nickname: nickname, email: email, password: password};
+    this.httpClient.post("/user/register", authData)
       .subscribe(response => {
         this.router.navigate(["/"]);
 
@@ -40,9 +40,9 @@ export class AuthService {
   }
 
 
-  login(nickname: string, email: string, password: string) {
-     const authData: AuthData = {nickname: nickname, email: email, password: password};
-     this.http.post<{token: string, expiresIn: number}>("http://localhost:3000/api/user/login", authData)
+  login(email: string, password: string) {
+     const authData: AuthLoginData = {email: email, password: password};
+     this.httpClient.post<{token: string, expiresIn: number}>("/user/login", authData)
       .subscribe(response => {
         const token = response.token;
         this.token = token;

@@ -8,13 +8,11 @@ import { Book } from '../../../admin/book-add/book.model';
 })
 export class BookCardComponent implements OnInit {
 
-  @Input() book!: Book;
+  @Input()book!: Book;
 
   constructor() { }
 
-  onPick() {
 
-  }
 
   ngOnInit(): void {
 

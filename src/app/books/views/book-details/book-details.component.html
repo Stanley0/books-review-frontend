@@ -16,10 +16,10 @@
    </div>
    <div *ngIf="book.rate">
      <p>
-        {{book.rate}} / 10
+      {{book.rate.toFixed(1)}} / 10
       </p>
    </div>
 </div>
 </div>
-<app-review-create></app-review-create>
+<app-review-create *ngIf="userIsAuthenicated"></app-review-create>
 
